@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sacred Temple Hero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600&family=Yatra+One&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600&family=Yatra+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asar&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/index-zd-GV6LP.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/framer-Bq-bTNO0.js">
+    <link rel="modulepreload" crossorigin href="./assets/vendor-CDnZY78L.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-Bgkch7eO.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      (function() {
+        function triggerVibration() {
+          if (typeof navigator !== "undefined" && "vibrate" in navigator) {
+            try {
+              navigator.vibrate(250);
+              setTimeout(function() {
+                try { navigator.vibrate([150, 80, 200]); } catch(err) {}
+              }, 150);
+            } catch(e) {}
+          }
+        }
+
+        ['touchstart', 'pointerdown', 'mousedown', 'click'].forEach(function(evtType) {
+          document.addEventListener(evtType, function(e) {
+            var target = e.target;
+            if (target && target.closest && (target.closest('.curtain-seal') || target.closest('.curtain-container') || target.closest('button'))) {
+              triggerVibration();
+            }
+          }, { capture: true, passive: true });
+        });
+      })();
+    </script>
+  </body>
+</html>
